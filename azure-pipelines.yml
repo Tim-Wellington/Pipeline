@@ -15,11 +15,11 @@
 
  steps:
 
- - task: CmdLine@2
-  displayName: 'instalar workaload MAUAI Android'
+- task: CmdLine@2  
+  displayName: 'Instalar workaload MAUAI'
   inputs:
     script: |
-      dotnet wor workload install maui-android
+      dotnet workload install muai
 
  - task: CmdLine@2  
   displayName: 'Restaurar pacotes'
