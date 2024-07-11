@@ -13,8 +13,7 @@ pool:
   buildConfiguration: 'Release'
   outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
 
- steps:
- - task: NuGetToolInstaller@1
+steps:
 
  - task: CmdLine@2
   displayName: 'instalar workaload MAUAI Android'
