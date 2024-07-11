@@ -15,11 +15,6 @@
 
  steps:
 
-- task: CmdLine@2  
-  displayName: 'Instalar workaload MAUAI'
-  inputs:
-    script: |
-      dotnet workload install muai
 
  - task: CmdLine@2  
   displayName: 'Restaurar pacotes'
