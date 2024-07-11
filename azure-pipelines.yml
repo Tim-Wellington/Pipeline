@@ -2,18 +2,18 @@
 # Build a Xamarin.Android project.
 # Add steps that test, sign, and distribute an app, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/xamarin
+ 
+ trigger:
+ - main
 
-trigger:
-- main
-
-pool:
+ pool:
   vmImage: 'macos-14'
 
  variables:
   buildConfiguration: 'Release'
   outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
 
-steps:
+ steps:
 
  - task: CmdLine@2
   displayName: 'instalar workaload MAUAI Android'
