@@ -1,0 +1,35 @@
+# Xamarin.Android
+# Build a Xamarin.Android project.
+# Add steps that test, sign, and distribute an app, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/xamarin
+
+trigger:
+- main
+
+pool:
+  vmImage: 'macos-14'
+
+ variables:
+  buildConfiguration: 'Release'
+  outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
+
+ steps:
+ - task: NuGetToolInstaller@1
+
+ - task: CmdLine@2
+  displayName: 'instalar workaload MAUAI Android'
+  inputs:
+    script: |
+      dotnet wor workload install maui-android
+
+ - task: CmdLine@2  
+  displayName: 'Restaurar pacotes'
+  inputs:
+    script: |
+      dotnet restore *.sln
+
+ - task: CmdLine@2  
+  displayName: 'Compilar Android'
+  inputs:
+    script: |
+      dotnet biuld -f net8.0-android
